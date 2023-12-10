@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.input {
+  font-size: 14px;
+  color: #1D3A5F;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+
+  padding: 10px;
+  border: #1D3A5F solid 2px;
+  border-radius: 5px;
+}
+
+.input::placeholder {
+  color: rgba(29, 58, 95, 0.25);
+}
+
+.inputErr {
+  border: #d32f2f solid 2px;
+  color: #d32f2f;
+}
+
+.err {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-left: 10px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+}

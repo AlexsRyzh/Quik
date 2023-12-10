@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+
+  gap: 20px;
+}
+
+.noActieLike {
+  color: #F3293E;
+  background: #FFEDED;
+}
+
+.activeLike {
+  color: white;
+  background: #F3293E;
+}
+
+.noActiveComment {
+  background: #CED4DC;
+  color: #2B4669;
+}
+
+.activeComment {
+  color: white;
+  background: #2B4669;
+}
+

@@ -1,0 +1,19 @@
+.label {
+  height: 50px;
+}
+
+.container {
+  display: none;
+}
+
+.icon {
+  font-size: 30px;
+  transform: rotate(30deg);
+  margin: 5px;
+
+  color: #2B4669;
+  font-variation-settings: 'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}

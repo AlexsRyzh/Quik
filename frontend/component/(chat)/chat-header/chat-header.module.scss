@@ -1,0 +1,45 @@
+
+.container {
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #D5DAE1;
+}
+
+.button {
+
+  padding: 0;
+  width: 65px;
+  height: 30px;
+
+
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  background: transparent;
+  color: #2B4669;
+}
+
+.buttonBack {
+  font-size: 20px;
+}
+
+.info {
+  font-size: 14px;
+  color: #2B4669;
+  font-weight: bold;
+}
+
+.img {
+  width: 45px;
+  min-width: 45px;
+  height: 45px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  gap: 10px;
+}
+
+.img {
+  width: 45px;
+  min-width: 45px;
+  height: 45px;
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+
+.fio {
+  font-weight: bold;
+  font-size: 14px;
+
+  color: #2B4669;
+}
+
+.comment {
+
+  white-space: pre-wrap;
+  color: #3A3A3A;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 600;
+
+}

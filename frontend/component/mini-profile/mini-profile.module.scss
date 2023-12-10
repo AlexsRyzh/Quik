@@ -1,0 +1,53 @@
+.container {
+  background: white;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 10px;
+}
+
+.contactContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.fio {
+  font-weight: bold;
+  font-size: 16px;
+  color: #2B4669;
+}
+
+.tag {
+  font-weight: bold;
+  font-size: 14px;
+  color: #7F90A4;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: #2B4669;
+}
+
+.infoName {
+  color: #95A3B4;
+}

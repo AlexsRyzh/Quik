@@ -1,0 +1,32 @@
+
+.header {
+  display: flex;
+  gap: 10px;
+
+  align-items: center;
+}
+
+.img {
+  width: 45px;
+  max-width: 45px;
+  height: 45px;
+
+  border-radius: 8px;
+
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  color: #2B4669;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.date {
+  font-size: 14px;
+  color: #6B7E96;
+}

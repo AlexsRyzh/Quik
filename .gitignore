@@ -18,6 +18,8 @@ node_modules
 # production
 /build
 
+.next
+
 # misc
 .DS_Store
 *.pem

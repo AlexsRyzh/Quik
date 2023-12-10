@@ -1,0 +1,36 @@
+.container {
+  background: #FFFFFF;
+  border-bottom: 0.5px solid #E1E4ED;
+
+
+}
+
+.innerContainer {
+  margin: auto;
+  max-width: 1440px;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: fit-content;
+}
+
+.logo {
+  padding: 10px;
+  background: #1D3A5F;
+  border-radius: 7px;
+}
+
+.logoText {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #1D3A5F;
+  font-size: 20px;
+  height: min-content;
+}

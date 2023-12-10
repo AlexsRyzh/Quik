@@ -1,0 +1,14 @@
+.container {
+  background: white;
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 280px;
+}
+
+.activeNavLink {
+  background: #2B4669;
+  color: white;
+}

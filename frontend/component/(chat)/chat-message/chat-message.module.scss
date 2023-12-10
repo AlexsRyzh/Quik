@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+
+  justify-content: left;
+  align-items: end;
+}
+
+.myContainer {
+  justify-content: right;
+}
+
+.blockMessage {
+  display: flex;
+  flex-direction: column;
+
+  background: #D5DAE1;
+  color: #2B4669;
+  font-weight: 500;
+  border-radius: 15px 15px 15px 0;
+
+  overflow: hidden;
+}
+
+.message {
+
+  white-space: pre-wrap;
+
+  max-width: 350px;
+
+  padding: 15px;
+
+
+}
+
+.img {
+  width: calc(100% - 30px);
+  object-fit: cover;
+  object-position: center;
+  max-height: 300px;
+  margin: 15px;
+
+  border-radius: 10px;
+}
+
+.myMessage {
+  border-radius: 15px 15px 0 15px;
+
+  background: #2B4669;
+  color: white;
+
+  align-self: end;
+}
