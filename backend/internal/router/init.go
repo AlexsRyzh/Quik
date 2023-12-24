@@ -11,6 +11,7 @@ import (
 	"github.com/quik/backend/internal/router/friend"
 	"github.com/quik/backend/internal/router/image"
 	"github.com/quik/backend/internal/router/like"
+	"github.com/quik/backend/internal/router/online"
 	"github.com/quik/backend/internal/router/post"
 	"github.com/quik/backend/internal/router/user"
 	"os"
@@ -22,6 +23,10 @@ func Init(e *echo.Echo) {
 	authentication.POST("/register", auth.Register)
 
 	e.GET("/upload/:filename", image.Upload)
+
+	///WebSocket
+
+	e.GET("/set-online", online.Online)
 }
 
 func InitSecurity(e *echo.Echo) {
@@ -43,6 +48,7 @@ func InitSecurity(e *echo.Echo) {
 	secure.GET("/users-me", user.GetMyUser)
 	secure.POST("/users/:id", user.UpdateOne)
 
+	secure.GET("/posts-ids-by-user-id", post.GetPostIDs)
 	secure.GET("/posts-ids", post.GetPostIDs)
 	secure.GET("/post-text/:id", post.GetPostText)
 	secure.GET("/post-img/:id", post.GetPostImg)
@@ -51,7 +57,7 @@ func InitSecurity(e *echo.Echo) {
 	secure.GET("/posts/:id/count-likes", post.GetPostCountLike)
 	secure.GET("/posts/:id/comments", post.GetPostComments)
 	secure.GET("/posts/:id/count-comment", post.GetPostCountComment)
-	secure.GET("/posts-ids-my", post.GetPostMyIDs)
+	secure.GET("/posts-ids/:userID", post.GetPostIDsByUserID)
 	secure.POST("/posts", post.CreateOne)
 
 	secure.POST("/likes/:postID", like.CreateOne)
@@ -61,6 +67,15 @@ func InitSecurity(e *echo.Echo) {
 
 	secure.POST("/friends/:id", friend.AddFriend)
 	secure.DELETE("/friends/:id", friend.DeleteFriend)
+	secure.GET("/is-friend/:id", friend.IsFriend)
+	secure.GET("/friend-requests", friend.FriendRequests)
+	secure.GET("/friend-list", friend.FriendList)
 
-	secure.GET("/ws", chat.Hello)
+	secure.GET("/messages/:idChat", chat.GetMessages)
+	secure.POST("/messages/:idChat", chat.CreateMessage)
+
+	secure.POST("/chats/:userID", chat.CreateChat)
+	secure.GET("/get-my-chat-list", chat.GetMyChatList)
+	secure.GET("/get-chat-info/:chatID", chat.GetChatInfoByID)
+	secure.GET("/chat", chat.Chat)
 }

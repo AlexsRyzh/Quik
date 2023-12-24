@@ -82,7 +82,7 @@ export default function Register() {
                 />
 
                 <Button>
-                    Войти
+                    Зарегистрироваться
                 </Button>
                 <p
                     className={styles.bottomText}>Уже есть аккаунт?

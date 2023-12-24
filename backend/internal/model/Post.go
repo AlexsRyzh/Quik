@@ -1,6 +1,9 @@
 package model
 
-import "time"
+import (
+	"gorm.io/gorm"
+	"time"
+)
 
 type Post struct {
 	ID             uint      `gorm:"primaryKey"`
@@ -9,7 +12,7 @@ type Post struct {
 	AmountComments int64     `gorm:"column:amount_comments"`
 	CreatedAt      time.Time `gorm:"column:created_at"`
 	UpdateAt       time.Time `gorm:"column:updated_at"`
-	
+
 	IDUser uint `gorm:"column:id_user"`
 
 	User User `gorm:"foreignKey:IDUser"`
@@ -17,4 +20,15 @@ type Post struct {
 
 func (Post) TableName() string {
 	return "posts"
+}
+
+func (p *Post) AfterCreate(tx *gorm.DB) (err error) {
+
+	user := User{}
+	tx.Where("id = ?", p.IDUser).First(&user)
+
+	user.AmountPosts = user.AmountPosts + 1
+	tx.Save(&user)
+
+	return
 }

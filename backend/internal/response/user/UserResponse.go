@@ -10,4 +10,5 @@ type UserResponse struct {
 	AmountSubscribe   int64  `json:"amount_subscribe"`
 	ImgLink           string `json:"img_link"`
 	Online            bool   `json:"online"`
+	IsFriend          bool   `json:"is_friend"`
 }

@@ -10,7 +10,6 @@ import (
 )
 
 func GetPostImg(c echo.Context) error {
-
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		return c.String(http.StatusBadRequest, "Не верный id")

@@ -25,11 +25,9 @@ func CreateOne(c echo.Context) error {
 			Text:   text,
 			IDUser: userID,
 		}
-
 		if err := tx.Create(&post).Error; err != nil {
 			return err
 		}
-
 		form, err := c.MultipartForm()
 		if err != nil {
 			return err

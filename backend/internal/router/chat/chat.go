@@ -4,34 +4,32 @@ import (
 	"fmt"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
+	"github.com/quik/backend/internal/api/token"
 )
 
 var (
 	upgrader = websocket.Upgrader{}
 )
 
-type Server struct {
-	clients       map[*websocket.Conn]bool
-	handleMessage func(message []byte) // хандлер новых сообщений
-}
+var Clients = make(map[uint]*websocket.Conn)
 
-func Hello(c echo.Context) error {
-	ws, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
-	if err != nil {
-		return err
-	}
-	defer ws.Close()
+func Chat(c echo.Context) error {
+	userID := token.GetUserIDFromToken(&c)
+	conn, _ := upgrader.Upgrade(c.Response(), c.Request(), nil)
+
+	defer conn.Close()
+
+	Clients[userID] = conn
+	fmt.Println(Clients)
 
 	for {
-		// Write
-		err := ws.WriteMessage(websocket.TextMessage, []byte("Hello, Client!"))
 
 		// Read
-		mt, msg, err := ws.ReadMessage()
+		mt, _, err := conn.ReadMessage()
 		if err != nil || mt == websocket.CloseMessage {
+			delete(Clients, userID)
 			break // Выходим из цикла, если клиент пытается закрыть соединение или связь прервана
 		}
-		fmt.Printf("%s\n", msg)
 	}
 	return nil
 }

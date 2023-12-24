@@ -33,15 +33,13 @@ func main() {
 	e := echo.New()
 	e.Validator = &CustomValidator{validator: validator.New()}
 
-	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:5000"},
-		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
-	}))
+	e.Use(middleware.CORS())
 
 	database, closeDB := db.Init()
 	db.Migration(database)
 
 	router.Init(e)
+
 	router.InitSecurity(e)
 
 	closeDB()
